@@ -5,9 +5,11 @@
 composer require jasonspace1220/kkorder
 ```
 
-**使用教學**
+**基礎使用教學**
 
 ```
+require_once './vendor/autoload.php';
+
 use lib\KkOrder\KkOrder;
 
 $kk = new KkOrder();
