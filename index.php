@@ -1,11 +1,9 @@
-# kkbox_interview
+<?php
 
-**使用教學**
+require_once './vendor/autoload.php';
 
-```
 use lib\KkInterView\KkInterView;
 
 $kk = new KkInterView();
 
 $kk->run();
-```
