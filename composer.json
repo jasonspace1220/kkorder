@@ -1,0 +1,17 @@
+{
+    "name": "jason/kkorder",
+    "type": "library",
+    "license": "MIT",
+    "authors": [{
+        "name": "jasonspace1220",
+        "email": "jasonspace1220@gmail.com"
+    }],
+    "require": {
+        "php": ">=7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "lib\\": "lib/"
+        }
+    }
+}

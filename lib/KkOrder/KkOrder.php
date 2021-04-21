@@ -1,6 +1,6 @@
 <?php
 
-namespace lib\KkInterView;
+namespace lib\KkOrder;
 
 use lib\Qa\QA;
 use lib\Menu\Menu;
@@ -12,7 +12,7 @@ use lib\CalOrder\CalOrderTypeA;
 use lib\CalOrder\CalOrderInterface;
 
 
-class KkInterView
+class KkOrder
 {
     protected $menuDatas;
     protected $ingredientsDatas;
