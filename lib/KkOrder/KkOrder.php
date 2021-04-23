@@ -12,7 +12,7 @@ use lib\CalOrder\CalOrderTypeA;
 use lib\CalOrder\CalOrderInterface;
 
 
-class KkOrder
+class KkOrder implements KkOrderInterface
 {
     protected $menuDatas;
     protected $ingredientsDatas;
@@ -23,7 +23,13 @@ class KkOrder
 
     public function __construct()
     {
-        $this->ingredientsDatas = $this->defaultData('ingredients');
+
+    }
+
+    public function run()
+    {
+        $this->ingredientsDatas = isset($this->ingredientsDatas) ? $this->ingredientsDatas : $this->defaultData('ingredients');
+        print_r($this->ingredientsDatas);
         $this->menuDatas = $this->defaultData('menu');
         $this->menu = new Menu;
         $this->ingredients = new Ingredients;
@@ -31,10 +37,7 @@ class KkOrder
         $this->setMenu($this->ingredients, $this->ingredientsDatas);
         $this->qaValid = new QaValid($this->menu->getNameSizeList(), $this->ingredients->getNameList());
         $this->qa = new QA($this->qaValid, "請輸入訂單 : ");
-    }
 
-    public function run()
-    {
         //取得訂單
         $ordersArray = $this->qa->startQa();
         //將訂單轉為價錢
@@ -47,7 +50,23 @@ class KkOrder
         return $result;
     }
 
+    /**
+     * setMenuData 設定菜單
+     *
+     * @return void
+     */
+    public function setMenuData($menuData){
+        $this->menuDatas = $menuData;
+    }
+    
+    /**
+     * setIngredientsData 設定配料
+     *
+     * @return void
+     */
+    public function setIngredientsData(){
 
+    }
 
     /**
      * setMenu 設定訂單
